@@ -1,20 +1,29 @@
-import React, {useState} from 'react';
-import { Redirect, Route, Switch } from 'react-router-dom';
+import React, { useState } from 'react';
+import { Route, Switch, Redirect,useHistory } from 'react-router-dom';
 import './App.css';
+import * as notesApi from '../../utils/notes-api';
 import SignupPage from '../SignupPage/SignupPage';
 import LoginPage from '../LoginPage/LoginPage';
-import userService from '../../utils/userService'
+import userService from '../../utils/userService';
 import Home from '../Home/Home';
+import AddNotePage from '../AddNotePage/AddNotePage';
+import NoteListPage from '../NoteListPage/NoteListPage';
 
+function App(props) {
+  console.log(userService)
+  const [user, setUser] = useState(userService.getUser())
+  const [notes, setNotes] = useState([]);
+  const history = useHistory();
 
-function App() {
-
-  const [user, setUser] = useState(userService.getUser()) // getUser decodes our JWT token, into a javascript object
-  // this object corresponds to the jwt payload which is defined in the server signup or login function that looks like 
-  // this  const token = createJWT(user); // where user was the document we created from mongo
+  async function handleAddNote(addNewNote) {
+    const newNote = await notesApi.create(addNewNote);
+    setNotes([...notes, newNote]);
+    history.push('/notes');
+  }
 
   function handleSignUpOrLogin(){
-    setUser(userService.getUser()) // getting the user from localstorage decoding the jwt
+
+    setUser(userService.getUser())
   }
 
   function handleLogout(){
@@ -32,14 +41,18 @@ function App() {
              <SignupPage handleSignUpOrLogin={handleSignUpOrLogin}/>
           </Route>
           {userService.getUser() ? 
-            <> 
+  
              <Switch>
                 <Route exact path="/">
-                  <Home />
-        
+                    <Home user={user} handleLogout={handleLogout}/>
                 </Route>
+                <Route exact path="/notes/add">
+                <AddNotePage handleAddNote={handleAddNote} user={user} handleLogout={handleLogout}/>
+              </Route> 
+              <Route exact path="/notes">
+                <NoteListPage user={user} handleLogout={handleLogout}/>
+              </Route> 
             </Switch>
-            </>
             :
             <Redirect to='/login'/>
           }
