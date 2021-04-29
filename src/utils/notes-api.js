@@ -22,3 +22,15 @@ export function getAll() {
   })
   .then(res => res.json());
 }
+
+export function update(note){
+  console.log(note, 'in create')
+  return fetch(`${BASE_URL}/edit/${note._id}`, {
+    method: 'PUT',
+    body: JSON.stringify(note),
+    headers: {
+      'Authorization': 'Bearer ' + tokenService.getToken(),
+      'Content-Type': 'application/json'
+    }
+  }).then(res => res.json())
+}

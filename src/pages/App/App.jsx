@@ -8,6 +8,8 @@ import userService from '../../utils/userService';
 import Home from '../Home/Home';
 import AddNotePage from '../AddNotePage/AddNotePage';
 import NoteListPage from '../NoteListPage/NoteListPage';
+import NoteDetailPage from '../NoteDetailPage/NoteDetailPage';
+import EditNotePage from '../EditNotePage/EditNotePage';
 
 function App(props) {
   console.log(userService)
@@ -19,6 +21,15 @@ function App(props) {
     const newNote = await notesApi.create(addNewNote);
     setNotes([...notes, newNote]);
     history.push('/notes');
+  }
+
+  async function handleUpdateNote(editNote){
+    const editedNote = await notesApi.update(editNote)
+    console.log(editedNote)
+    setNotes([editedNote]);
+    history.push('/notes');
+
+
   }
 
   function handleSignUpOrLogin(){
@@ -51,6 +62,12 @@ function App(props) {
               </Route> 
               <Route exact path="/notes">
                 <NoteListPage user={user} handleLogout={handleLogout}/>
+              </Route> 
+              <Route exact path="/notes/details">
+                <NoteDetailPage user={user} handleLogout={handleLogout}/>
+              </Route> 
+              <Route exact path="/notes/edit">
+                <EditNotePage user={user} handleLogout={handleLogout} handleUpdateNote={handleUpdateNote}/>
               </Route> 
             </Switch>
             :

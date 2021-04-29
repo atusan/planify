@@ -15,7 +15,7 @@ export default function NoteFeedItem({user,note}){
       </Card.Content>
       <Card.Content>
       <Card.Description>
-      {note.title}
+        <Link to={{ pathname: '/notes/details', state: {note}}}>{note.title}</Link>
       </Card.Description>
       </Card.Content>
     </Card>
