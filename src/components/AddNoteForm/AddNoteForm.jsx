@@ -3,9 +3,7 @@ import SemanticDatepicker from "react-semantic-ui-datepickers";
 import "react-semantic-ui-datepickers/dist/react-semantic-ui-datepickers.css";
 import { Button, Form, Grid, Header, Image, Segment } from "semantic-ui-react";
 
-
 export default function AddNoteForm(props) {
- 
   const [state, setState] = useState({
     title: "",
     location: "",
@@ -14,9 +12,6 @@ export default function AddNoteForm(props) {
 
   const [date, setDate] = useState(null);
 
-  
-
-  
   function handleChange(e) {
     setState({
       ...state,
@@ -24,23 +19,23 @@ export default function AddNoteForm(props) {
     });
   }
 
-  function handleDateChange(event,data) {
-    setDate(data.value) 
+  function handleDateChange(event, data) {
+    console.log(data.value, 'this is data.value')
+    let dateString = data.value;
+    dateString = new Date(dateString).toUTCString();
+    dateString = dateString.split(' ').slice(0, 4).join(' ');
+    console.log(dateString);
+    setDate(dateString);
   }
 
-
-
-
   function handleSubmit(e) {
-    console.log(state, "this is sate from add note form");
+    console.log(date,'this is date')
     e.preventDefault();
-    console.log("handleSubmit fired");
-    const payLoad = {
+    const payload = {
       ...state,
-      date
-    }
-    console.log(payLoad)
-    props.handleAddNote(payLoad);
+      date,
+    };
+    props.handleAddNote(payload);
   }
 
   return (
@@ -56,11 +51,7 @@ export default function AddNoteForm(props) {
               onChange={handleChange}
               required
             />
-            <SemanticDatepicker
-
-              onChange={handleDateChange}
-              
-            />
+            <SemanticDatepicker onChange={handleDateChange} />
 
             <Form.Input
               className="form-control"
