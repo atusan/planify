@@ -24,7 +24,7 @@ export function getAll() {
 }
 
 export function update(note){
-  console.log(note, 'in create')
+  console.log(note, 'in update')
   return fetch(`${BASE_URL}/edit/${note._id}`, {
     method: 'PUT',
     body: JSON.stringify(note),
@@ -32,5 +32,8 @@ export function update(note){
       'Authorization': 'Bearer ' + tokenService.getToken(),
       'Content-Type': 'application/json'
     }
-  }).then(res => res.json())
+  }).then(res =>{ 
+     console.log("THIS IS RES: ", res)
+     return res.json()
+  })
 }

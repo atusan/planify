@@ -9,6 +9,7 @@ export default function EditNotePage(props){
     console.log(data);
     const [state, setState] = useState(data);
     
+
     function handleChange(e){
         setState({
           ...state,
@@ -17,7 +18,7 @@ export default function EditNotePage(props){
       }
       
       function handleSubmit(e){
-          console.log(state,'this is sate from add note form')
+          console.log(state,'handle submit to send new state')
           e.preventDefault()
           console.log('handleSubmit fired')
           props.handleUpdateNote(state);

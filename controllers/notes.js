@@ -3,6 +3,7 @@ const Note = require('../models/note');
 
 module.exports = {
     create,
+    show,
     index,
     update
 }
@@ -38,6 +39,11 @@ async function create(req, res){
     }
  }
 
+async function show(req, res) {
+    const note = await Note.findOne({ _id: req.params.id, user: req.user._id });
+    res.status(200).json(note);
+}
+
 async function index(req, res){
     try {
         const notes = await Note.find({}).populate('user').exec()
@@ -49,13 +55,15 @@ async function index(req, res){
 }
 
 async function update(req, res){
+    console.log('***********hitting update', req.body)
     try {
-        const notes = await Note.findByIdAndUpdate(req.body, {new:true}).populate('user').exec()
-        console.log(notes ,'this is update notes in update function')
+        const notes = await Note.findByIdAndUpdate(req.params.id, req.body, {new:true}).populate('user').exec()
         res.status(200).json({notes})
     } catch(err){
         res.json(err)
     }
 }
+
+
 
 

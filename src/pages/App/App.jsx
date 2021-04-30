@@ -23,14 +23,17 @@ function App(props) {
     history.push('/notes');
   }
 
-  async function handleUpdateNote(editNote){
-    const editedNote = await notesApi.update(editNote)
-    console.log(editedNote)
-    setNotes([editedNote]);
+  async function handleUpdateNote(updatedNoteData){
+    const updatedNote = await notesApi.update(updatedNoteData);
+    console.log(updatedNote,'this is updatedNote')
+    const newNoteArray = notes.map(note => {
+      return note._id === updatedNote._id ? updatedNote : note
+    })
+    console.log(newNoteArray, 'newNoteArray')
+    setNotes(newNoteArray);
     history.push('/notes');
-
-
   }
+
 
   function handleSignUpOrLogin(){
 
