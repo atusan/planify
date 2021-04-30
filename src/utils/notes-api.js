@@ -37,3 +37,14 @@ export function update(note){
      return res.json()
   })
 }
+
+export function deleteOne(noteId){
+  return fetch(`${BASE_URL}/delete/${noteId}`, {
+    method: 'DELETE',
+    headers: {
+      'Authorization': 'Bearer ' + tokenService.getToken() 
+    }
+  }).then(res =>{
+     return res.json()
+  })
+}

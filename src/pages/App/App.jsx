@@ -34,6 +34,12 @@ function App(props) {
     history.push('/notes');
   }
 
+  async function handleDeleteNote(noteId) {
+    await notesApi.deleteOne(noteId);
+    setNotes(notes.filter(note => note._id !== noteId));
+    history.push('/notes');
+  }
+
 
   function handleSignUpOrLogin(){
 
@@ -67,7 +73,7 @@ function App(props) {
                 <NoteListPage user={user} handleLogout={handleLogout}/>
               </Route> 
               <Route exact path="/notes/details">
-                <NoteDetailPage user={user} handleLogout={handleLogout}/>
+                <NoteDetailPage user={user} handleLogout={handleLogout} handleDeleteNote={handleDeleteNote}/>
               </Route> 
               <Route exact path="/notes/edit">
                 <EditNotePage user={user} handleLogout={handleLogout} handleUpdateNote={handleUpdateNote}/>

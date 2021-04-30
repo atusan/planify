@@ -5,7 +5,8 @@ module.exports = {
     create,
     show,
     index,
-    update
+    update,
+    delete: deleteOne
 }
 
 
@@ -55,13 +56,17 @@ async function index(req, res){
 }
 
 async function update(req, res){
-    console.log('***********hitting update', req.body)
     try {
         const notes = await Note.findByIdAndUpdate(req.params.id, req.body, {new:true}).populate('user').exec()
         res.status(200).json({notes})
     } catch(err){
         res.json(err)
     }
+}
+
+async function deleteOne(req, res) {
+    const note = await Note.findByIdAndDelete({ _id: req.params.id, user: req.user._id });
+    res.status(200).json(note);
 }
 
 
