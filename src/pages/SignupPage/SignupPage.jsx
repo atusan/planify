@@ -59,11 +59,11 @@ export default function SignUpPage(props) {
  
 
   return (
-    <>
-    <Grid textAlign='center' style={{ height: '100vh' }} verticalAlign='middle'>
+    <div className="bg-top-container ">
+    <Grid textAlign='center' style={{ height: '115vh' }} verticalAlign='middle'>
       <Grid.Column style={{ maxWidth: 450 }}>
-          <Header as='h2' color='teal' textAlign='center'>
-            <Image src='https://i.imgur.com/s4LrnlU.png' /> Sign Up    
+          <Header as='h2' color='brown' textAlign='center'>
+          Organize your life with PLANIFY 
           </Header>            
             <Form autoComplete="off"  onSubmit={handleSubmit}>
             <Segment stacked>               
@@ -111,7 +111,10 @@ export default function SignUpPage(props) {
                   className="btn"
                   disabled={invalidForm}
                 >
-                Signup
+                  <Button.Content style={{color: 'rgb(177,148,64)'}}>
+                  Signup
+                   </Button.Content>
+               
               </Button>
               </Segment>
               {error ? <ErrorMessage error={error} /> : null}
@@ -119,7 +122,7 @@ export default function SignUpPage(props) {
            
         </Grid.Column>
       </Grid>
-    </>
+    </div>
   );   
 
 }

@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
+import { useHistory, Link } from 'react-router-dom';
+import { Button, Form, Grid, Header, Image, Message, Segment } from 'semantic-ui-react'
 import './LoginPage.css';
 import ErrorMessage from '../../components/ErrorMessage/ErrorMessage'
 import userService from '../../utils/userService';
-import { useHistory, Link } from 'react-router-dom';
-import { Button, Form, Grid, Header, Image, Message, Segment } from 'semantic-ui-react'
-
+import test from '../../images/1.png';
+import test1 from '../../images/2.jpeg';
 
 
 export default function LoginPage(props){
@@ -44,11 +45,11 @@ export default function LoginPage(props){
     
 
     return (
-        <>
-          <Grid textAlign='center' style={{ height: '100vh' }} verticalAlign='middle'>
+      <div className="bg-top-container">
+          <Grid textAlign='center' style={{ height: '115vh'}} verticalAlign='middle'>
             <Grid.Column style={{ maxWidth: 450 }}>
-            <Header as='h2' color='teal' textAlign='center'>
-            <Image src='https://i.imgur.com/s4LrnlU.png' /> Log-in to your account
+            <Header as='h2' color='brown' textAlign='center'>
+             PLANIFY
             </Header>
             <Form  autoComplete="off"  onSubmit={handleSubmit}>
                <Segment stacked>
@@ -70,13 +71,16 @@ export default function LoginPage(props){
                     required
                   />
                 <Button
-                  color='teal'
+                  color='rgb(177,148,64)'
                   fluid size='large'
                   type="submit"
                   className="btn"
                   disabled={invalidForm}
                 >
-                  Login
+                   <Button.Content style={{color: 'rgb(177,148,64)'}}>
+                      Login
+                   </Button.Content>
+                  
                 </Button>
               </Segment>
             </Form>
@@ -86,7 +90,7 @@ export default function LoginPage(props){
             {error ? <ErrorMessage error={error} /> : null}
             </Grid.Column>
           </Grid>
-        </>
+        </div>
       );
 }
 
