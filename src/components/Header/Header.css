@@ -1,0 +1,7 @@
+.page-header {
+    position: absolute;
+    top: 0;
+    background-image: url('../../public/images/v.jpg')!important;
+    background-size: cover;
+   
+}

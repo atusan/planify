@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import PageHeader from '../../components/Header/Header';
-import {  Grid } from 'semantic-ui-react'
+import {  Grid } from 'semantic-ui-react';
+import './Home.css';
+import '../../public/styles/styles.css';
 
 export default function Home({user,handleLogout}){
 
     return (
+      <div className="bg-wall">
         <Grid centered >
         <Grid.Row>
           <Grid.Column>
@@ -22,6 +25,7 @@ export default function Home({user,handleLogout}){
           </Grid.Column>
         </Grid.Row>
     </Grid>
+    </div>
 
     )
 }

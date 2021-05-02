@@ -4,8 +4,7 @@ import { Button, Form, Grid, Header, Image, Message, Segment } from 'semantic-ui
 import './LoginPage.css';
 import ErrorMessage from '../../components/ErrorMessage/ErrorMessage'
 import userService from '../../utils/userService';
-import test from '../../images/1.png';
-import test1 from '../../images/2.jpeg';
+
 
 
 export default function LoginPage(props){
