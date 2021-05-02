@@ -8,22 +8,21 @@ export default function NoteCardDetail({ note }) {
   dateString = dateString.split(" ").slice(0, 4).join(" ");
 
   return (
-    <List>
+    <List size={"big"}>
       <List.Item>
-        <List.Icon name="sticky note" />
-        <List.Content>{note.title}</List.Content>
+        <List.Content>Title: {note.title}</List.Content>
       </List.Item>
       <List.Item>
-        <List.Icon name="marker" />
-        <List.Content>{note.location}</List.Content>
+        <br />
+        <List.Content>Location: {note.location}</List.Content>
       </List.Item>
       <List.Item>
-        <List.Icon name="time" />
-        <List.Content>{dateString}</List.Content>
+        <br />
+        <List.Content>Deadline: {dateString}</List.Content>
       </List.Item>
       <List.Item>
-        <List.Icon name="tasks" />
-        <List.Content>{note.description}</List.Content>
+        <br />
+        <List.Content>Description: {note.description}</List.Content>
       </List.Item>
     </List>
   );
