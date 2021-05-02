@@ -1,22 +1,19 @@
-import React from 'react';
-import { Card,Image  } from 'semantic-ui-react';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Card, Image } from "semantic-ui-react";
+import { Link } from "react-router-dom";
 
-export default function NoteFeedItem({user,note}){
-    return(
+export default function NoteFeedItem({ user, note }) {
+  return (
     <Card key={note._id}>
-      <Card.Content textAlign='left'>
-          <Image
-              floated='left'
-              size='large'
-              avatar
-              src='https://react.semantic-ui.com/images/wireframe/square-image.png'
-          />
+      <Card.Content textAlign="left">
+        <Card.Description>
+          <Link to={{ pathname: "/notes/details", state: { note } }}>
+            {note.title}
+          </Link>
+        </Card.Description>
       </Card.Content>
       <Card.Content>
-      <Card.Description>
-        <Link to={{ pathname: '/notes/details', state: {note}}}>{note.title}</Link>
-      </Card.Description>
+        <Card.Description>{note.description}</Card.Description>
       </Card.Content>
     </Card>
   );
