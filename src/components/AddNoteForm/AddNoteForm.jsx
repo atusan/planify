@@ -29,7 +29,7 @@ export default function AddNoteForm(props) {
   }
 
   function handleSubmit(e) {
-    console.log(date,'this is date')
+   
     e.preventDefault();
     const payload = {
       ...state,
@@ -39,8 +39,10 @@ export default function AddNoteForm(props) {
   }
 
   return (
-    <Grid textAlign="center" style={{ height: "25vh" }} verticalAlign="middle">
-      <Grid.Column style={{ maxWidth: 450 }}>
+    
+    <Grid textAlign="center"  style={{ height: "75vh"}} verticalAlign="middle" className="form-width">
+      
+      <Grid.Column >
         <Segment>
           <Form autoComplete="off" onSubmit={handleSubmit}>
             <Form.Input
@@ -73,6 +75,8 @@ export default function AddNoteForm(props) {
           </Form>
         </Segment>
       </Grid.Column>
+      
     </Grid>
+    
   );
 }
