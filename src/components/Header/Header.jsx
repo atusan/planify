@@ -9,11 +9,11 @@ export default function PageHeader({ user, handleLogout }) {
       <Segment clearing className="page-header">
         <Header as="h2" floated="right">
           <Link style={{ color: "black" }} exact to="/notes/add">
-            Add Note
+            Add Plan
           </Link>
           &nbsp;&nbsp;&nbsp;&nbsp;
           <Link exact to="/notes" style={{ color: "black" }}>
-            My Notes{" "}
+            My Plans
           </Link>
           &nbsp;&nbsp;&nbsp;&nbsp;
           <Link to="/" style={{ color: "black" }}>

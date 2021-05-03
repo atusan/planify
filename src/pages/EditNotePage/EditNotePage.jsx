@@ -78,7 +78,7 @@ export default function EditNotePage(props) {
                 onChange={handleChange}
               />
               <Button type="submit" className="btn" color="brown">
-                Update Note
+                Update Plan
               </Button>
               <Link to="/notes">Cancel</Link>
             </Form>

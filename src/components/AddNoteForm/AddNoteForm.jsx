@@ -67,7 +67,7 @@ export default function AddNoteForm(props) {
               placeholder="Location"
               onChange={handleChange}
             />
-            <Form.Input
+            <Form.TextArea
               className="form-control"
               name="description"
               value={state.description}
@@ -75,7 +75,7 @@ export default function AddNoteForm(props) {
               onChange={handleChange}
             />
             <Button type="submit" className="btn" color="brown">
-              ADD Note
+              ADD Plan
             </Button>
           </Form>
         </Segment>

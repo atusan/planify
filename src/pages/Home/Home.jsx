@@ -8,22 +8,18 @@ export default function Home({user,handleLogout}){
 
     return (
       <div className="bg-wall">
-        <Grid centered >
+        <Grid centered  style={{ height: "70vh" }}>
         <Grid.Row>
           <Grid.Column>
             <PageHeader user={user} handleLogout={handleLogout}/>
           </Grid.Column>
         </Grid.Row>
         <Grid.Row>
-          <Grid.Column style={{ maxWidth: 450 }}>
-            hello
+          <Grid.Column as='h2' style={{ maxWidth: 600 ,color:'brown'}}>
+          <br/><span className='quote'>“Good fortune is what happens when opportunity meets with planning.” – Thomas Edisono</span>
           </Grid.Column>
         </Grid.Row>
-        <Grid.Row>
-          <Grid.Column style={{maxWidth: 450}}>
-            hello2
-          </Grid.Column>
-        </Grid.Row>
+        
     </Grid>
     </div>
 
