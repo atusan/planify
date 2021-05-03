@@ -70,7 +70,7 @@ export default function EditNotePage(props) {
                 placeholder="Location"
                 onChange={handleChange}
               />
-              <Form.Input
+              <Form.TextArea
                 className="form-control"
                 name="description"
                 value={state.description}
