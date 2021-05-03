@@ -29,7 +29,7 @@ Planning is key to success. Planify is web app that allows those who love planni
 
 ## Getting Started
 
-[Click here to start!](https://planify-atn.herokuapp.com/)
+[Click here to start!](https://planify-app.herokuapp.com/)
 
 
 ## Next Steps
