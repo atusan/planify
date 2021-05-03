@@ -4,7 +4,7 @@ Planning is key to success. Planify is web app that allows those who love planni
 
 
 ### Home page 
-<img src="../../public/images/home.png">
+<img src="../../blob/master/src/public/images/home.png">
 
 ### Petcations page - to see pet sitting posts
 <img src="petcations_post.png">
