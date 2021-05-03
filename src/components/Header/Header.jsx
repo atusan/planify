@@ -12,19 +12,19 @@ export default function PageHeader({ user, handleLogout }) {
             Add Note
           </Link>
           &nbsp;&nbsp;&nbsp;&nbsp;
-          <Link exact to="/notes" style={{ color: "#8c644d" }}>
+          <Link exact to="/notes" style={{ color: "black" }}>
             My Notes{" "}
           </Link>
           &nbsp;&nbsp;&nbsp;&nbsp;
-          <Link to="/" style={{ color: "brown" }}>
+          <Link to="/" style={{ color: "black" }}>
             <Icon name="home"></Icon>
           </Link>
-          <Link to="" style={{ color: "brown" }} onClick={handleLogout}>
+          <Link to="" style={{ color: "black" }} onClick={handleLogout}>
             Logout
           </Link>
         </Header>
         <Header as="h2" floated="left">
-          <Link to={`/${user.username}`} style={{ color: "#bf6a1f" }}>
+          <Link to={`/${user.username}`} style={{ color: "black" }}>
             <Image
               src={
                 user.photoUrl
