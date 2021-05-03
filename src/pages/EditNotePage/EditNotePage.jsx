@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, Link } from "react-router-dom";
 import "../../public/styles/styles.css";
 import SemanticDatepicker from "react-semantic-ui-datepickers";
 import "react-semantic-ui-datepickers/dist/react-semantic-ui-datepickers.css";
@@ -60,7 +60,7 @@ export default function EditNotePage(props) {
 
               <SemanticDatepicker
                 onChange={handleDateChange}
-                format='MM-DD-YYYY'
+                format="MM-DD-YYYY"
                 value={dateFullFormat}
               />
               <Form.Input
@@ -77,9 +77,10 @@ export default function EditNotePage(props) {
                 placeholder="Description"
                 onChange={handleChange}
               />
-              <Button type="submit" className="btn">
+              <Button type="submit" className="btn" color="brown">
                 Update Note
               </Button>
+              <Link to="/notes">Cancel</Link>
             </Form>
           </Segment>
         </Grid.Column>

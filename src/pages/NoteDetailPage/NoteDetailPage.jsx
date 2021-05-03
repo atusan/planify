@@ -25,10 +25,7 @@ export default function NoteDetailPage({
           </Grid.Column>
         </Grid.Row>
         <Grid.Row>
-          {/* <Button icon onClick={() => handleDeleteNote(note._id)}>
-            <Icon name="delete" />
-          </Button> */}
-          <RemoveButton handleDeleteNote={handleDeleteNote} note={note}/>
+          <RemoveButton handleDeleteNote={handleDeleteNote} note={note} />
         </Grid.Row>
         <Grid.Row>
           <Grid.Column style={{ maxWidth: 600 }}>

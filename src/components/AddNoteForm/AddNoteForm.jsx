@@ -20,16 +20,15 @@ export default function AddNoteForm(props) {
   }
 
   function handleDateChange(event, data) {
-    console.log(data.value, 'this is data.value')
+    console.log(data.value, "this is data.value");
     let dateString = data.value;
     dateString = new Date(dateString).toUTCString();
-    dateString = dateString.split(' ').slice(0, 4).join(' ');
+    dateString = dateString.split(" ").slice(0, 4).join(" ");
     console.log(dateString);
     setDate(dateString);
   }
 
   function handleSubmit(e) {
-   
     e.preventDefault();
     const payload = {
       ...state,
@@ -39,10 +38,13 @@ export default function AddNoteForm(props) {
   }
 
   return (
-    
-    <Grid textAlign="center"  style={{ height: "75vh"}} verticalAlign="middle" className="form-width">
-      
-      <Grid.Column >
+    <Grid
+      textAlign="center"
+      style={{ height: "75vh" }}
+      verticalAlign="middle"
+      className="form-width"
+    >
+      <Grid.Column>
         <Segment>
           <Form autoComplete="off" onSubmit={handleSubmit}>
             <Form.Input
@@ -53,7 +55,10 @@ export default function AddNoteForm(props) {
               onChange={handleChange}
               required
             />
-            <SemanticDatepicker onChange={handleDateChange} />
+            <SemanticDatepicker
+              onChange={handleDateChange}
+              format="MM-DD-YYYY"
+            />
 
             <Form.Input
               className="form-control"
@@ -69,14 +74,12 @@ export default function AddNoteForm(props) {
               placeholder="Description"
               onChange={handleChange}
             />
-            <Button type="submit" className="btn">
+            <Button type="submit" className="btn" color="brown">
               ADD Note
             </Button>
           </Form>
         </Segment>
       </Grid.Column>
-      
     </Grid>
-    
   );
 }
