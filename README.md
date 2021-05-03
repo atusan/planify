@@ -12,7 +12,7 @@ Planning is key to success. Planify is web app that allows those who love planni
 ### Add Plan
 <img src="../../blob/master/src/public/images/add.png">
 
-### Plan Lists
+### Plans List
 <img src="../../blob/master/src/public/images/list.png">
 
 
