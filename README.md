@@ -3,18 +3,17 @@
 Planning is key to success. Planify is web app that allows those who love planning an organazing to Post their to-do lists. Note their responsibilities and deadlines. 
 
 
-### Home page 
+### Login page 
 <img src="../../blob/master/src/public/images/home.png">
 
-### Petcations page - to see pet sitting posts
-<img src="petcations_post.png">
+### Home Page
+<img src="../../blob/master/src/public/images/q.png">
 
-### Pet sitter sign up
-<img src="create_petsitter.png">
+### Add Plan
+<img src="../../blob/master/src/public/images/add.png">
 
-### Example owner profile
-<img src="owner_profile.png">
-<img src="owner_profile2.png">
+### Plan Lists
+<img src="../../blob/master/src/public/images/list.png">
 
 
 ## Technologies Used 
@@ -38,3 +37,4 @@ Planning is key to success. Planify is web app that allows those who love planni
 - Allow user to prioritize their plans
 - Display days left until deadline 
 - Call an event API and allow user to add an event to their plans  
+
