@@ -1,6 +1,7 @@
 # Planify
 
-Planning is key to success. Planify is web app that allows those who love planning an organazing to Post their to-do lists. Note their responsibilities and deadlines. 
+Planning is key to success. Planify is web app that allows those who love planning and organizing![image](https://user-images.githubusercontent.com/14252039/117214561-e2c04480-adb1-11eb-9478-cf9939a6c5a4.png)
+ to Post their to-do lists. Note their responsibilities and deadlines. 
 
 
 ### Login page 
